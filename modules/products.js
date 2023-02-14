@@ -1,3 +1,7 @@
+import mongoose from "mongoose";
+
+const Schema = mongoose.Schema;
+
 const products = [
   {
     id: 1,
@@ -18,4 +22,12 @@ const products = [
     price: 39.99,
   },
 ];
+
+const trackSchema = new Schema({
+  artist: String,
+  title: String,
+});
+
+export const Track = mongoose.model("Track", trackSchema);
+
 export default products;
